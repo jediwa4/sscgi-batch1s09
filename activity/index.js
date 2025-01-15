@@ -3851,7 +3851,9 @@ class Bracket {
     let red22 = "color:red; font-size:20px;";
     let green22 = "color:green; font-size:22px;";
     let numofpokemon = parseInt(
-      prompt("Please enter the number of pokemon per trainer?"),
+      prompt(
+        "Please enter the number of pokemon per trainer? (Only numbers from 1-5)"
+      ),
       10
     );
     if (numofpokemon > 5) {
@@ -3864,10 +3866,11 @@ class Bracket {
     } else if (
       numofpokemon == null ||
       numofpokemon == 0 ||
-      numofpokemon == NaN
+      numofpokemon == NaN ||
+      numofpokemon < 0
     ) {
       console.log("Invalid input");
-      throw new Error("Please reload, you need to input a number");
+      throw new Error("Please reload, you need to input a valid number");
     }
 
     let alltrainers = this.trainers;
@@ -4297,7 +4300,7 @@ function shuffle(array) {
 }
 let numoftrainer = parseInt(
   prompt(
-    "Please choose between number of trainers that you want in your bracket? (4 or 5)"
+    "Please choose between number of trainers that you want in your bracket? (Only numbers 4 or 5)"
   ),
   10
 );
